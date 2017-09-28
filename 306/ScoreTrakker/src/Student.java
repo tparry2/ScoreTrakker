@@ -7,7 +7,11 @@ public class Student implements Comparable<Student>{
 	public Student(String name, int score) {
 		super();
 		this.name = name;
+		try {
 		this.score = score;
+		} catch(NumberFormatException nfe) {
+			System.out.println("Incorrect format for " + this.name + " not a valid score: " + score);
+		}
 	}
 
 	public String getName() {
